@@ -2,20 +2,16 @@ import streamlit as st
 import os
 
 def load_header_content():
-    """
-    Lee el archivo HTML y borra cualquier espacio en blanco al inicio de cada línea
-    para evitar que Streamlit lo confunda con código.
-    """
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(current_dir, 'header.html')
+   current_dir = os.path.dirname(os.path.abspath(__file__))
+   file_path = os.path.join(current_dir, 'header.html')
     
-    try:
+   try:
         with open(file_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
             clean_lines = [line.lstrip() for line in lines]
             return "".join(clean_lines)
             
-    except FileNotFoundError:
+   except FileNotFoundError:
         return "<h1 style='color:red'>ERROR: No se encuentra header.html</h1>"
 
 def show_header():

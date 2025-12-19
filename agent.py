@@ -3,7 +3,7 @@ from openai import OpenAI
 from context import SYSTEM_PROMPT
 
 def show_chatbot():
-    # ESTILOS CSS PARA EL CHAT
+    # ESTILOS CSS
     st.markdown("""
     <style>
         /* Contenedor del input fijo abajo */
@@ -33,7 +33,7 @@ def show_chatbot():
     </style>
     """, unsafe_allow_html=True)
 
-    # --- CAMBIO AQUÍ: Título actualizado ---
+    #    Título actualizado
     st.markdown("### 🤖 AI Agent")
     st.caption("Ask me about Jesús's skills, experience, or this project's architecture.")
 
@@ -73,9 +73,9 @@ def show_chatbot():
             full_response = ""
             
             try:
-                # Llamada a la API con Streaming (Efecto máquina de escribir)
+                # Llamada a la API con Streaming
                 stream = st.session_state.openai_client.chat.completions.create(
-                    model="gpt-3.5-turbo", # Usa "gpt-4o" si tienes acceso/presupuesto
+                    model="gpt-3.5-turbo", # "gpt-4o"
                     messages=st.session_state.messages,
                     stream=True,
                 )
@@ -83,7 +83,7 @@ def show_chatbot():
                 for chunk in stream:
                     if chunk.choices[0].delta.content is not None:
                         full_response += chunk.choices[0].delta.content
-                        message_placeholder.markdown(full_response + "▌") # Cursor parpadeando
+                        message_placeholder.markdown(full_response + "▌")
                 
                 message_placeholder.markdown(full_response)
                 

@@ -41,7 +41,7 @@ load_css()
 # 4. ESTRUCTURA DE LA PÁGINA
 show_sidebar()
 show_header()
-# Usamos Tabs para separar el contenido visual del Chatbot
+# Tabs para separar el contenido visual del Chatbot
 tab1, tab2 = st.tabs(["🚀 PROJECTS & WORK", "🧠 AI AGENT (CHAT)"])
 
 with tab1:
