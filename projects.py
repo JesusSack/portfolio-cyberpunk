@@ -1,7 +1,7 @@
 import streamlit as st
 
 def show_projects():
-    # CSS AVANZADO (ESTILOS VISUALES)
+    # ESTILOS VISUALES
     st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
@@ -85,7 +85,7 @@ def show_projects():
     </style>
     """, unsafe_allow_html=True)
 
-    # --- TÍTULO PRINCIPAL ---
+    # TÍTULO PRINCIPAL
     st.markdown("<h2 style='text-align: center; margin-bottom: 40px;'>📂 PROJECT DATABASE</h2>", unsafe_allow_html=True)
 
     # PROJECT 1: AI (CORTEX)
@@ -150,7 +150,7 @@ def show_projects():
                 """)
 
     st.write("")
-    # PROJECT 3: DATA ENG (HAZARD YELLOW)
+    # PROJECT 3: DATA ENG
     with st.container():
         st.markdown("""
         <div class="cyber-card style-hazard">
@@ -181,7 +181,7 @@ def show_projects():
                 """)
 
     st.write("")
-    # PROJECT 4: BI (MATRIX GREEN)
+    # PROJECT 4: BI
     with st.container():
         st.markdown("""
         <div class="cyber-card style-matrix">
