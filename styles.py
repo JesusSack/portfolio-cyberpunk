@@ -7,29 +7,22 @@ def load_css():
 
         /* 1. VIDEO DE FONDO */
         #myVideo {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-            opacity: 0.6;
+            position: fixed; right: 0; bottom: 0;
+            min-width: 100%; min-height: 100%;
+            z-index: -1; opacity: 0.6;
         }
 
         /* 2. FONDO GENERAL */
-        .stApp {
-            background: rgba(0, 0, 0, 0.7);
-        }
+        .stApp { background: rgba(0, 0, 0, 0.7); }
 
-        /* 3. LIMPIEZA DE INTERFAZ */
+        /* 3. LIMPIEZA */
         footer {visibility: hidden;}
         
         .block-container {
-            padding-top: 1rem;
-            padding-bottom: 5rem;
+            padding-top: 1rem; padding-bottom: 5rem;
         }
 
-        /* 4. ARREGLO DE SUPERPOSICIÓN (Z-INDEX) */
+        /* 4. SIDEBAR & MENU BUTTON */
         section[data-testid="stSidebar"] {
             z-index: 99999 !important;
             background-color: #0a0a0a !important;
@@ -41,64 +34,58 @@ def load_css():
             color: #00ffff !important;
         }
 
-        /* 5. SCROLLBARS PERSONALIZADAS */
+        /* 5. SCROLLBARS */
         ::-webkit-scrollbar { width: 10px; background: #111; }
         ::-webkit-scrollbar-thumb { background: #00ffff; border-radius: 5px; }
         ::-webkit-scrollbar-thumb:hover { background: #FF0055; }
 
         /* ================================================= */
-        /* 6. OPTIMIZACIÓN MÓVIL (SOLO CELULARES) */
+        /* 6. OPTIMIZACIÓN MÓVIL (FLECHA LARGA) */
         /* ================================================= */
         @media only screen and (max-width: 768px) {
             
-            /* --- TEXTO "PRESIONE AQUÍ" MODIFICADO --- */
+            /* INSTRUCCIÓN DE MENÚ MEJORADA */
             .glitch-wrapper::before {
-                content: "↖ MENU: PRESIONE AQUÍ";
+                /* Flecha larga construida con caracteres */
+                content: "↖--------- MENU: PRESIONE AQUÍ"; 
+                
                 display: block;
                 position: absolute;
-                top: -40px; /* Un poco más arriba por el tamaño */
-                left: 0;
-                width: 100%;
+                top: -50px;       /* Más arriba para acercarse al botón */
+                left: -40px;      /* Bien a la izquierda */
+                width: 120%;      /* Ancho extra para que no se corte */
                 text-align: left; /* Alineado a la izquierda */
-                padding-left: 10px; /* Pequeño margen desde el borde */
                 
                 /* Estilo del texto */
-                color: #F3F315;
+                color: #F3F315;   /* Amarillo Cyberpunk */
                 font-family: 'Orbitron', sans-serif;
-                font-size: 1.1rem; /* Más grande (antes 0.8rem) */
-                font-weight: bold;
+                font-size: 1.3rem; /* Letra MÁS GRANDE */
+                font-weight: 900;  /* Más gruesa */
                 letter-spacing: 1px;
-                text-shadow: 0 0 5px #F3F315;
-                animation: blinker 2s infinite;
+                text-shadow: 0 0 10px #F3F315; /* Más brillo */
+                
+                animation: blinker 1.5s infinite alternate;
             }
 
             @keyframes blinker { 
-                50% { opacity: 0.3; } 
+                0% { opacity: 0.4; text-shadow: 0 0 5px #F3F315; }
+                100% { opacity: 1; text-shadow: 0 0 20px #F3F315, 0 0 10px #FF0055; }
             }
 
-            /* Ajustes de tamaño y posición del nombre */
+            /* Ajustes del nombre principal para dar espacio */
             .glitch-wrapper {
                 transform: scale(0.65);
-                margin-top: 25px; /* Más espacio arriba */
-                margin-left: -10px; /* Ajuste leve a la izquierda */
+                margin-top: 40px; /* Bajamos el nombre para dejar sitio a la flecha */
+                margin-left: -15px;
             }
 
-            .glitch {
-                font-size: 2.5rem !important;
-            }
-
-            .block-container {
-                padding-top: 4.5rem !important; /* Más aire arriba */
-            }
-
-            .cyber-card {
-                padding: 15px;
-            }
+            .glitch { font-size: 2.5rem !important; }
             
-            #myVideo {
-                width: 300%;
-                left: -100%;
-            }
+            .block-container { padding-top: 5rem !important; }
+
+            .cyber-card { padding: 15px; }
+            
+            #myVideo { width: 300%; left: -100%; }
         }
     </style>
     """, unsafe_allow_html=True)
