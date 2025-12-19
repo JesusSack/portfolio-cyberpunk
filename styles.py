@@ -22,9 +22,8 @@ def load_css():
         }
 
         /* 3. LIMPIEZA DE INTERFAZ */
-        footer {visibility: hidden;} /* Oculta marca de agua */
+        footer {visibility: hidden;}
         
-        /* Ajuste de márgenes generales */
         .block-container {
             padding-top: 1rem;
             padding-bottom: 5rem;
@@ -36,10 +35,9 @@ def load_css():
             background-color: #0a0a0a !important;
         }
 
-        /* Aseguramos que el botón del menú sea visible y esté encima */
         button[kind="header"] {
             z-index: 100000 !important;
-            background: transparent !important; /* Lo dejamos limpio/transparente */
+            background: transparent !important;
             color: #00ffff !important;
         }
 
@@ -53,34 +51,36 @@ def load_css():
         /* ================================================= */
         @media only screen and (max-width: 768px) {
             
-            /* --- EL TEXTO "APRETE AQUÍ" ENCIMA DE TU NOMBRE --- */
+            /* --- TEXTO "PRESIONE AQUÍ" MODIFICADO --- */
             .glitch-wrapper::before {
-                content: "↖ MENU: APRETE AQUÍ"; /* La flecha apunta al botón del menú */
+                content: "↖ MENU: PRESIONE AQUÍ";
                 display: block;
                 position: absolute;
-                top: -30px; /* Lo subimos 30px arriba del nombre */
+                top: -40px; /* Un poco más arriba por el tamaño */
                 left: 0;
                 width: 100%;
-                text-align: center; /* Centrado respecto al nombre */
+                text-align: left; /* Alineado a la izquierda */
+                padding-left: 10px; /* Pequeño margen desde el borde */
                 
                 /* Estilo del texto */
-                color: #F3F315; /* Amarillo Cyberpunk */
+                color: #F3F315;
                 font-family: 'Orbitron', sans-serif;
-                font-size: 0.8rem;
+                font-size: 1.1rem; /* Más grande (antes 0.8rem) */
                 font-weight: bold;
-                letter-spacing: 2px;
+                letter-spacing: 1px;
                 text-shadow: 0 0 5px #F3F315;
-                animation: blinker 2s infinite; /* Parpadeo suave */
+                animation: blinker 2s infinite;
             }
 
             @keyframes blinker { 
                 50% { opacity: 0.3; } 
             }
 
-            /* Ajustes de tamaño para que quepa en pantalla */
+            /* Ajustes de tamaño y posición del nombre */
             .glitch-wrapper {
-                transform: scale(0.65); /* Reducimos el nombre */
-                margin-top: 20px;       /* Bajamos un poco el nombre para dar espacio al aviso */
+                transform: scale(0.65);
+                margin-top: 25px; /* Más espacio arriba */
+                margin-left: -10px; /* Ajuste leve a la izquierda */
             }
 
             .glitch {
@@ -88,14 +88,13 @@ def load_css():
             }
 
             .block-container {
-                padding-top: 4rem !important; /* Más espacio arriba para que no se pegue al borde */
+                padding-top: 4.5rem !important; /* Más aire arriba */
             }
 
             .cyber-card {
                 padding: 15px;
             }
             
-            /* Ajuste del video en vertical */
             #myVideo {
                 width: 300%;
                 left: -100%;
