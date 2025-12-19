@@ -2,21 +2,22 @@ import streamlit as st
 import base64
 import os
 
-# Importamos los módulos
+#  IMPORTACIONES 
 from styles import load_css
 from header import show_header
 from projects import show_projects
 from sidebar import show_sidebar
+from agent import show_chatbot
 
 # 1. CONFIGURACIÓN DE PÁGINA
 st.set_page_config(
-    page_title="Jesus Sack | Portfolio",
+    page_title="Jesus Sack | AI Engineer",
     page_icon="⚡",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# FUNCIÓN PARA CARGAR EL VIDEO DE FONDO 
+#  FUNCIÓN VIDEO FONDO
 def get_base64_video(file_name):
     try:
         with open(file_name, "rb") as f:
@@ -25,7 +26,7 @@ def get_base64_video(file_name):
     except FileNotFoundError:
         return None
 
-# 2. CARGAR Y MOSTRAR EL VIDEO DE FONDO
+# 2. CARGAR VIDEO
 video_file = get_base64_video("background.mp4")
 if video_file:
     st.markdown(f"""
@@ -33,13 +34,18 @@ if video_file:
             <source src="data:video/mp4;base64,{video_file}" type="video/mp4">
         </video>
     """, unsafe_allow_html=True)
-else:
-    print("⚠️ Background video not found.")
 
-# 3. CARGAR ESTILOS CSS
+# 3. CARGAR ESTILOS
 load_css()
 
-# 4. MOSTRAR LAS SECCIONES
-show_sidebar()   # Barra lateral
-show_header()    # Encabezado (Nombre y Terminal)
-show_projects()  # Lista de proyectos
+# 4. ESTRUCTURA DE LA PÁGINA
+show_sidebar()
+show_header()
+# Usamos Tabs para separar el contenido visual del Chatbot
+tab1, tab2 = st.tabs(["🚀 PROJECTS & WORK", "🧠 AI AGENT (CHAT)"])
+
+with tab1:
+    show_projects()
+
+with tab2:
+    show_chatbot()
