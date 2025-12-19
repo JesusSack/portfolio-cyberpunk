@@ -91,15 +91,8 @@ To run this system on your local machine, follow these protocols:
 Operator Identity
 JESÚS SACK
 
-Role: AI & Data Engineer // Backend Specialist
 
-Base: Rosario, Argentina
 
-Focus: Machine Learning, Deep Learning, ETL Pipelines.
-
-<img src="https://img.shields.io/badge/LinkedIn-Profile-blue?style=for-the-badge&logo=linkedin"> <img src="https://img.shields.io/badge/GitHub-Repo-181717?style=for-the-badge&logo=github">
-
-<p align="center"> <i>END OF LINE. © 2025</i> </p>
 
 
 
