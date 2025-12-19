@@ -40,29 +40,28 @@ def load_css():
         ::-webkit-scrollbar-thumb:hover { background: #FF0055; }
 
         /* ================================================= */
-        /* 6. OPTIMIZACIÓN MÓVIL (FLECHA LARGA) */
+        /* 6. OPTIMIZACIÓN MÓVIL (AJUSTE DE ALTURA) */
         /* ================================================= */
         @media only screen and (max-width: 768px) {
             
-            /* INSTRUCCIÓN DE MENÚ MEJORADA */
+            /* FLECHA Y TEXTO */
             .glitch-wrapper::before {
-                /* Flecha larga construida con caracteres */
                 content: "↖--------- MENU: PRESIONE AQUÍ"; 
-                
                 display: block;
                 position: absolute;
-                top: -50px;       /* Más arriba para acercarse al botón */
-                left: -40px;      /* Bien a la izquierda */
-                width: 120%;      /* Ancho extra para que no se corte */
-                text-align: left; /* Alineado a la izquierda */
                 
-                /* Estilo del texto */
-                color: #F3F315;   /* Amarillo Cyberpunk */
+                /* AJUSTE DE ALTURA: -90px lo sube "2 espacios" más respecto al anterior */
+                top: -90px;       
+                left: -40px;
+                width: 120%;
+                text-align: left;
+                
+                color: #F3F315;
                 font-family: 'Orbitron', sans-serif;
-                font-size: 1.3rem; /* Letra MÁS GRANDE */
-                font-weight: 900;  /* Más gruesa */
+                font-size: 1.3rem;
+                font-weight: 900;
                 letter-spacing: 1px;
-                text-shadow: 0 0 10px #F3F315; /* Más brillo */
+                text-shadow: 0 0 10px #F3F315;
                 
                 animation: blinker 1.5s infinite alternate;
             }
@@ -72,16 +71,17 @@ def load_css():
                 100% { opacity: 1; text-shadow: 0 0 20px #F3F315, 0 0 10px #FF0055; }
             }
 
-            /* Ajustes del nombre principal para dar espacio */
+            /* Separamos más el nombre hacia abajo para que no se choque con la flecha */
             .glitch-wrapper {
                 transform: scale(0.65);
-                margin-top: 40px; /* Bajamos el nombre para dejar sitio a la flecha */
+                margin-top: 60px; /* Más margen superior */
                 margin-left: -15px;
             }
 
             .glitch { font-size: 2.5rem !important; }
             
-            .block-container { padding-top: 5rem !important; }
+            /* Damos más aire al contenedor general */
+            .block-container { padding-top: 6rem !important; }
 
             .cyber-card { padding: 15px; }
             
