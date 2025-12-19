@@ -40,25 +40,28 @@ def load_css():
         ::-webkit-scrollbar-thumb:hover { background: #FF0055; }
 
         /* ================================================= */
-        /* 6. OPTIMIZACIÓN MÓVIL (AJUSTE DE ALTURA) */
+        /* 6. OPTIMIZACIÓN MÓVIL (AJUSTE FINO 80PX) */
         /* ================================================= */
         @media only screen and (max-width: 768px) {
             
             /* FLECHA Y TEXTO */
             .glitch-wrapper::before {
-                content: "↖--------- MENU: PRESIONE AQUÍ"; 
+                content: "↖------- MENU: PRESIONE AQUÍ"; 
                 display: block;
                 position: absolute;
                 
-                /* AJUSTE DE ALTURA: -90px lo sube "2 espacios" más respecto al anterior */
-                top: -90px;       
-                left: -40px;
+                /* ALTURA: -80px (Pedido exacto: alto pero sin tocar el techo) */
+                top: -80px;       
+                
+                /* CENTRADO: Lo empujamos más a la derecha para que quede centrado */
+                left: 30px;
+                
                 width: 120%;
                 text-align: left;
                 
                 color: #F3F315;
                 font-family: 'Orbitron', sans-serif;
-                font-size: 1.3rem;
+                font-size: 1.1rem; /* Un pelín más chico para que entre mejor centrado */
                 font-weight: 900;
                 letter-spacing: 1px;
                 text-shadow: 0 0 10px #F3F315;
@@ -71,16 +74,16 @@ def load_css():
                 100% { opacity: 1; text-shadow: 0 0 20px #F3F315, 0 0 10px #FF0055; }
             }
 
-            /* Separamos más el nombre hacia abajo para que no se choque con la flecha */
+            /* Espaciado del nombre respecto a la flecha */
             .glitch-wrapper {
                 transform: scale(0.65);
-                margin-top: 60px; /* Más margen superior */
-                margin-left: -15px;
+                margin-top: 70px; /* Equilibrio para que no quede pegado */
+                margin-left: -10px;
             }
 
             .glitch { font-size: 2.5rem !important; }
             
-            /* Damos más aire al contenedor general */
+            /* Aire superior general */
             .block-container { padding-top: 6rem !important; }
 
             .cyber-card { padding: 15px; }
