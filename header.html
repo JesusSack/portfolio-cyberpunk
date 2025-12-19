@@ -1,0 +1,101 @@
+<style>
+    /* ANIMACIÓN DE ESCANEO */
+    @keyframes scan-horizontal {
+        0% { background-position: -100% 0; }
+        100% { background-position: 200% 0; }
+    }
+
+    /* CONTENEDOR PRINCIPAL DEL HEADER */
+    .header-terminal {
+        border-top: 2px solid #00ffff;
+        border-bottom: 2px solid #00ffff;
+        background: linear-gradient(90deg, rgba(0,255,255,0.05) 0%, rgba(0,0,0,0.3) 50%, rgba(0,255,255,0.05) 100%);
+        padding: 30px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    /* EFECTO GLITCH NOMBRE */
+    .glitch-wrapper {
+        position: relative;
+        z-index: 2;
+    }
+    
+    /* SUBTÍTULO TIPO SISTEMA */
+    .sys-subtitle {
+        font-family: 'Orbitron', sans-serif;
+        color: #F3F315;
+        font-size: 1.2rem;
+        letter-spacing: 4px;
+        margin-top: 10px;
+        text-shadow: 0 0 5px rgba(243, 243, 21, 0.5);
+        border-left: 4px solid #F3F315;
+        padding-left: 15px;
+    }
+
+    /* TARJETA DE BIO (MISSION BRIEFING) */
+    .bio-interface {
+        margin-top: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(10, 10, 10, 0.8);
+        position: relative;
+        padding: 20px;
+        clip-path: polygon(
+            0 0, 
+            100% 0, 
+            100% calc(100% - 20px), 
+            calc(100% - 20px) 100%, 
+            0 100%
+        );
+    }
+
+    .bio-interface::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 10px; height: 10px;
+        border-top: 2px solid #FF0055;
+        border-left: 2px solid #FF0055;
+    }
+    
+    .bio-interface::after {
+        content: 'IDENTITY LOG';
+        position: absolute;
+        bottom: 5px; right: 25px;
+        font-size: 0.7rem;
+        color: #555;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .bio-text {
+        font-family: 'Roboto Mono', monospace;
+        color: #ccc;
+        line-height: 1.6;
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    .highlight-cyan { color: #00ffff; font-weight: bold; }
+    .highlight-pink { color: #FF0055; font-weight: bold; }
+</style>
+
+<div class="header-terminal">
+    <div class="glitch-wrapper">
+        <h1 class="glitch" data-text="JESÚS SACK" style="font-size: 4rem; margin: 0; font-family: 'Orbitron'; color: white;">JESÚS SACK</h1>
+    </div>
+    
+    <div class="sys-subtitle">AI & DATA ENGINEER // BACKEND SPECIALIST</div>
+
+    <div class="bio-interface">
+        <p class="bio-text">
+            I am a developer obsessed with connecting <span class="highlight-pink">Data Engineering</span>, 
+            <span class="highlight-pink">Backend Automation</span>, and 
+            <span class="highlight-cyan">Artificial Intelligence</span>.
+            <br><br>
+            I build <i>end-to-end</i> systems that feel like magic but run on pure logic.
+            <br><br>
+            🎓 <b>Education:</b> AI Technician @ <b>FCEIA-UNR</b>.<br>
+            ⚡ <b>Target:</b> Deep specialization in <b>Machine Learning</b> and <b>Deep Learning</b>.
+        </p>
+    </div>
+</div>
