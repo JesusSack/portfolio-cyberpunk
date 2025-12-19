@@ -3,7 +3,6 @@ import streamlit.components.v1 as components
 import base64
 import os
 
-# --- FUNCIÓN PARA CARGAR AUDIO ---
 def get_base64_audio(file_name):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(script_dir, file_name)
@@ -169,7 +168,6 @@ def show_sidebar():
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;700&display=swap');
             
-            /* ID CARD & PROFILE PIC */
             .id-card {
                 border: 2px solid #00ffff;
                 background: linear-gradient(135deg, rgba(0,255,255,0.1) 0%, rgba(0,0,0,0) 100%);
@@ -177,22 +175,27 @@ def show_sidebar():
                 text-align: center; 
                 margin-bottom: 20px;
                 box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-                /* Ajuste para que la tarjeta se achique si solo tiene foto */
                 display: flex;
-                justify-content: center;
+                flex-direction: column;
                 align-items: center;
+                justify-content: center;
             }
             
             .profile-pic {
-                width: 120px; /* Un poco más grande ahora que está sola */
+                width: 120px; 
                 height: 120px;
                 border-radius: 50%;
                 border: 3px solid #00ffff;
                 object-fit: cover;
                 box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+                margin-bottom: 0px;
             }
 
-            /* TERMINAL STATUS */
+            @media only screen and (max-width: 600px) {
+                .id-card { padding: 10px; }
+                .profile-pic { width: 80px; height: 80px; }
+            }
+
             .terminal-box {
                 background: #0a0a0a; border-left: 4px solid #00ff00;
                 padding: 10px; font-family: 'Roboto Mono', monospace;
@@ -201,13 +204,15 @@ def show_sidebar():
             .blink { animation: blinker 1.5s linear infinite; }
             @keyframes blinker { 50% { opacity: 0; } }
 
-            /* DATALINK BUTTONS */
             .link-container { margin-bottom: 20px; }
             .cyber-link {
                 display: block; background: transparent; border: 1px solid #333;
                 color: #c0c0c0 !important; padding: 10px; margin-bottom: 8px;
                 text-decoration: none !important; font-family: 'Orbitron', sans-serif;
                 font-size: 0.9rem; transition: all 0.3s ease; position: relative; overflow: hidden;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             .cyber-link:before {
                 content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
@@ -219,7 +224,6 @@ def show_sidebar():
             }
             .cyber-link:hover:before { left: 100%; }
 
-            /* CHIPS */
             .stack-section { margin-bottom: 15px; }
             .stack-title { color: #F3F315; font-family: 'Orbitron', sans-serif; font-size: 0.8rem; margin-bottom: 5px; border-bottom: 1px solid #333; }
             .chip-container { display: flex; flex-wrap: wrap; gap: 5px; }
@@ -236,11 +240,7 @@ def show_sidebar():
         """, unsafe_allow_html=True)
 
         if img_html:
-            st.markdown(f"""
-            <div class="id-card">
-                {img_html}
-            </div>
-            """, unsafe_allow_html=True)
+            st.markdown(f"""<div class="id-card">{img_html}</div>""", unsafe_allow_html=True)
         
         st.markdown("""<div class="terminal-box"><div>📍 BASE: Rosario, ARG</div><div style="margin-top: 5px;"><span class="blink">🔋</span> STATUS: <span style="color: #fff;">Available for Dev</span></div></div>""", unsafe_allow_html=True)
         
