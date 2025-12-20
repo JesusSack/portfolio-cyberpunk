@@ -79,12 +79,11 @@ Visual Guidance: Directional indicator for the mobile menu to enhance usability.
 
 📬 Contact
 
-## 📬 Contact
+ ## 📬 Contact
 
-## 📬 Contact
+- **LinkedIn:** https://www.linkedin.com/in/jesus05/
+- **Email:** jesusmsack@hotmail.com
 
-- **LinkedIn:** [Jesús Sack](https://www.linkedin.com/in/jesus05/)
-- **Email:** [jesusmsack@hotmail.com](mailto:jesusmsack@hotmail.com)
 
 
 Built with ❤️ and 🐍 Python by Jesús Sack.
