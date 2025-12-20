@@ -69,10 +69,10 @@ Touch UX: Menu buttons and interactive elements are resized for touch targets.
 
 Visual Guide: Added a "Presione Aquí" directional indicator for the mobile menu.
 
-📬 Contact
-LinkedIn: https://www.linkedin.com/in/jesus05/
+📬 Contact:
+    LinkedIn: https://www.linkedin.com/in/jesus05/
 
-Email: jesusmsack@hotmail.com
+    Email: jesusmsack@hotmail.com
 
 Built with ❤️ and 🐍 Python by Jesús Sack.   
 
