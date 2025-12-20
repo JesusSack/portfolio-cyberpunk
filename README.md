@@ -5,8 +5,8 @@
 ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-412991?style=for-the-badge&logo=openai&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Production-success?style=for-the-badge)
 
-> **"Not just a website, but an interactive system."**  
-> Production-level web application designed as a professional portfolio, featuring a modular architecture, an embedded AI agent for recruiting queries, and a custom **Cyberpunk** aesthetic engineered via CSS injection.
+> > **"Not just a website — a living system."**  
+> A production-grade portfolio engineered as an interactive OS: modular architecture, embedded AI agent for technical and recruiting queries, and a fully customized **Cyberpunk** interface built through direct CSS injection.
 
 ---
 
@@ -79,9 +79,12 @@ Visual Guidance: Directional indicator for the mobile menu to enhance usability.
 
 📬 Contact
 
-LinkedIn: Jesús Sack
+## 📬 Contact
 
-Email: jesusmsack@hotmail.com
+## 📬 Contact
+
+- **LinkedIn:** [Jesús Sack](https://www.linkedin.com/in/jesus05/)
+- **Email:** [jesusmsack@hotmail.com](mailto:jesusmsack@hotmail.com)
 
 
 Built with ❤️ and 🐍 Python by Jesús Sack.
