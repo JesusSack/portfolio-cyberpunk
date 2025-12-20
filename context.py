@@ -1,6 +1,6 @@
 """
 Este archivo define el 'Cerebro' del agente.
-Contiene la información cruda que la IA usará para responder sobre ti.
+
 """
 
 DATA_CONTEXT = """
