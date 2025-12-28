@@ -40,8 +40,8 @@ def load_css():
                 content: "↖";
                 display: block;
                 position: absolute;
-                top: -175px;
-                left: 0px;
+                top: -210px;
+                left: -10px;
                 transform: rotate(20deg);
                 font-size: 7rem;
                 line-height: 1;
@@ -53,11 +53,11 @@ def load_css():
             }
 
             .glitch-wrapper::after {
-                content: "PRESIONE EL\A SYMBOL >>";
+                content: "PRESS THE\A SYMBOL >>";
                 white-space: pre;
                 display: block;
                 position: absolute;
-                top: -95px;
+                top: -90px;
                 left: 5px;
                 width: 300px;
                 text-align: left;
@@ -80,7 +80,7 @@ def load_css():
 
             .glitch-wrapper {
                 transform: scale(0.65);
-                margin-top: 120px;
+                margin-top: 130px;
                 margin-left: -15px;
             }
 
