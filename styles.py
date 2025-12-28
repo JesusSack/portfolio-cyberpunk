@@ -36,56 +36,50 @@ def load_css():
 
         @media only screen and (max-width: 768px) {
             
-            /* LA FLECHA GIGANTE */
             .glitch-wrapper::before {
                 content: "↖";
                 display: block;
                 position: absolute;
-                
-                /* POSICIÓN: Pegada arriba a la izquierda */
-                top: -140px;
-                left: -10px;
-                
-                /* TAMAÑO EXTREMO */
-                font-size: 6rem; /* Aumenta este número para hacerla más grande */
+                top: -160px;
+                left: -15px;
+                font-size: 7rem;
                 line-height: 1;
-                
                 color: #F3F315;
-                text-shadow: 0 0 20px #F3F315;
-                animation: blinker 1.5s infinite alternate;
+                text-shadow: 0 0 25px #F3F315;
+                animation: blinker 1.2s infinite alternate;
                 pointer-events: none;
                 z-index: 999999;
             }
 
-            /* EL TEXTO (Separado para que se lea bien) */
             .glitch-wrapper::after {
-                content: "MENU: PRESIONE AHÍ";
+                content: "MENU:\A PRESIONE AHÍ";
+                white-space: pre;
                 display: block;
                 position: absolute;
-                
-                /* Ubicado debajo de la flecha */
-                top: -60px;
-                left: 10px;
-                
+                top: -100px;
+                left: 75px;
+                width: 250px;
+                text-align: left;
                 font-family: 'Orbitron', sans-serif;
-                font-size: 1rem; 
+                font-size: 1.6rem; 
                 font-weight: 900;
+                line-height: 1.2;
+                letter-spacing: 1px;
                 color: #F3F315;
-                text-shadow: 0 0 10px #F3F315;
-                
-                animation: blinker 1.5s infinite alternate;
+                text-shadow: 0 0 15px #F3F315;
+                animation: blinker 1.2s infinite alternate;
                 pointer-events: none;
                 z-index: 999999;
             }
 
             @keyframes blinker { 
-                0% { opacity: 0.5; text-shadow: 0 0 5px #F3F315; }
-                100% { opacity: 1; text-shadow: 0 0 30px #F3F315; }
+                0% { opacity: 0.6; text-shadow: 0 0 10px #F3F315; }
+                100% { opacity: 1; text-shadow: 0 0 30px #F3F315, 0 0 10px #FF0055; }
             }
 
             .glitch-wrapper {
                 transform: scale(0.65);
-                margin-top: 90px; /* Más espacio arriba para que entre la flecha gigante */
+                margin-top: 110px;
                 margin-left: -10px;
             }
 
