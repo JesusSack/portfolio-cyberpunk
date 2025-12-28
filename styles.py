@@ -5,6 +5,37 @@ def load_css():
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;700&display=swap');
 
+        [data-testid="stSidebarCollapsedControl"] svg {
+            display: none !important;
+        }
+
+        [data-testid="stSidebarCollapsedControl"] {
+            width: auto !important;
+            padding: 5px 15px !important;
+            border: 2px solid #F3F315 !important;
+            background-color: rgba(10, 10, 10, 0.9) !important;
+            border-radius: 0px !important;
+            margin-top: 5px;
+            margin-left: 5px;
+            box-shadow: 0 0 10px rgba(243, 243, 21, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        [data-testid="stSidebarCollapsedControl"]::after {
+            content: "☰ MENU"; 
+            font-family: 'Orbitron', sans-serif;
+            color: #F3F315;
+            font-weight: 900;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        [data-testid="stSidebarCollapsedControl"]:hover {
+            box-shadow: 0 0 20px rgba(243, 243, 21, 0.6);
+            background-color: rgba(243, 243, 21, 0.1) !important;
+            border-color: #fff !important;
+        }
+
         #myVideo {
             position: fixed; right: 0; bottom: 0;
             min-width: 100%; min-height: 100%;
@@ -24,69 +55,15 @@ def load_css():
             background-color: #0a0a0a !important;
         }
 
-        button[kind="header"] {
-            z-index: 100000 !important;
-            background: transparent !important;
-            color: #00ffff !important;
-        }
-
         ::-webkit-scrollbar { width: 10px; background: #111; }
         ::-webkit-scrollbar-thumb { background: #00ffff; border-radius: 5px; }
         ::-webkit-scrollbar-thumb:hover { background: #FF0055; }
 
         @media only screen and (max-width: 768px) {
             
-            .glitch-wrapper::before {
-                content: "↖"; 
-                display: block;
-                position: absolute;
-                
-                top: -165px; 
-                left: 5px;   
-                height: 165px; 
-                
-                border-left: 2px dashed #F3F315;
-                padding-left: 5px;
-                
-                font-size: 4rem; 
-                line-height: 0.6;
-                color: #F3F315;
-                text-shadow: 0 0 15px #F3F315;
-                
-                animation: blinker 1.5s infinite alternate;
-                pointer-events: none;
-            }
-
-            .glitch-wrapper::after {
-                content: "MENU: PRESIONE AHÍ"; 
-                display: block;
-                position: absolute;
-                
-                top: -150px; 
-                left: 60px;  
-                
-                width: 250px;
-                text-align: left;
-                
-                font-family: 'Orbitron', sans-serif;
-                font-size: 1.1rem; 
-                font-weight: 900;
-                letter-spacing: 1px;
-                color: #F3F315;
-                text-shadow: 0 0 10px #F3F315;
-                
-                animation: blinker 1.5s infinite alternate;
-                pointer-events: none;
-            }
-
-            @keyframes blinker { 
-                0% { opacity: 0.4; text-shadow: 0 0 5px #F3F315; box-shadow: -2px 0 5px rgba(243, 243, 21, 0.2); }
-                100% { opacity: 1; text-shadow: 0 0 20px #F3F315, 0 0 10px #FF0055; box-shadow: -2px 0 15px rgba(243, 243, 21, 0.6); }
-            }
-
             .glitch-wrapper {
                 transform: scale(0.65);
-                margin-top: 70px; 
+                margin-top: 50px; 
                 margin-left: -10px;
             }
 
