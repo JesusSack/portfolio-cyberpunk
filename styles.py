@@ -5,66 +5,6 @@ def load_css():
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;700&display=swap');
 
-        /* ================================================= */
-        /* BOTÓN DE MENU (MODIFICADO Y FORZADO)             */
-        /* ================================================= */
-
-        /* 1. Ocultar el icono SVG original (las 3 rayitas por defecto) */
-        [data-testid="stSidebarCollapsedControl"] svg {
-            display: none !important;
-        }
-
-        /* 2. Estilo de la caja del botón "MENU" */
-        [data-testid="stSidebarCollapsedControl"] {
-            /* Forzamos que se muestre como caja flexible */
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            
-            /* Dimensiones y posición fija para que NADA lo tape */
-            position: fixed !important;
-            top: 15px !important;
-            left: 15px !important;
-            width: auto !important;
-            height: auto !important;
-            padding: 8px 15px !important;
-            z-index: 999999 !important; /* Capa superior absoluta */
-            
-            /* Estética Cyberpunk */
-            background-color: rgba(10, 10, 10, 0.95) !important;
-            border: 2px solid #F3F315 !important; /* Amarillo Neón */
-            border-radius: 4px !important;
-            box-shadow: 0 0 10px rgba(243, 243, 21, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        /* 3. Inyectar el texto "MENU" dentro del botón */
-        [data-testid="stSidebarCollapsedControl"]::after {
-            content: "☰ MENU"; 
-            font-family: 'Orbitron', sans-serif;
-            color: #F3F315 !important;
-            font-weight: 900;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            white-space: nowrap; /* Evita que el texto se rompa */
-        }
-
-        /* Efecto al pasar el mouse */
-        [data-testid="stSidebarCollapsedControl"]:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(243, 243, 21, 0.8);
-            border-color: #fff !important;
-        }
-        
-        /* Ajuste para que el texto cambie de color en hover */
-        [data-testid="stSidebarCollapsedControl"]:hover::after {
-            color: #fff !important;
-        }
-
-        /* ================================================= */
-        /* RESTO DE ESTILOS GENERALES                       */
-        /* ================================================= */
-
         #myVideo {
             position: fixed; right: 0; bottom: 0;
             min-width: 100%; min-height: 100%;
@@ -83,31 +23,52 @@ def load_css():
             z-index: 99999 !important;
             background-color: #0a0a0a !important;
         }
-        
-        /* Botones del header general (como los 3 puntos) transparentes */
+
         button[kind="header"] {
+            z-index: 100000 !important;
             background: transparent !important;
+            color: #00ffff !important;
         }
 
         ::-webkit-scrollbar { width: 10px; background: #111; }
         ::-webkit-scrollbar-thumb { background: #00ffff; border-radius: 5px; }
         ::-webkit-scrollbar-thumb:hover { background: #FF0055; }
 
-        /* ================================================= */
-        /* MÓVIL                                            */
-        /* ================================================= */
-
         @media only screen and (max-width: 768px) {
             
-            /* Solo ajustamos posición si es necesario en móvil */
-            [data-testid="stSidebarCollapsedControl"] {
-                top: 10px !important;
-                left: 10px !important;
+            .glitch-wrapper::before {
+                content: "↖ \A MENU: PRESIONE AHÍ";
+                white-space: pre;
+                display: block;
+                position: absolute;
+                top: -150px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: fit-content;
+                text-align: center;
+                
+                color: #F3F315;
+                font-family: 'Orbitron', sans-serif;
+                font-size: 1.4rem;
+                font-weight: 900;
+                line-height: 1.3;
+                letter-spacing: 1px;
+                text-shadow: 0 0 15px #F3F315;
+                
+                animation: blinker 1.5s infinite alternate;
+                pointer-events: none;
+                z-index: 999999;
+            }
+
+            @keyframes blinker { 
+                0% { opacity: 0.5; text-shadow: 0 0 5px #F3F315; }
+                100% { opacity: 1; text-shadow: 0 0 25px #F3F315, 0 0 5px #FF0055; }
             }
 
             .glitch-wrapper {
                 transform: scale(0.65);
-                margin-top: 60px; /* Espacio para que no choque con el botón MENU */
+                margin-top: 80px;
                 margin-left: -10px;
             }
 
