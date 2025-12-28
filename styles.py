@@ -40,12 +40,19 @@ def load_css():
                 content: "↖"; 
                 display: block;
                 position: absolute;
-                top: -140px; 
+                
+                top: -165px; 
                 left: 5px;   
-                font-size: 5rem; 
-                line-height: 1;
+                height: 165px; 
+                
+                border-left: 2px dashed #F3F315;
+                padding-left: 5px;
+                
+                font-size: 4rem; 
+                line-height: 0.6;
                 color: #F3F315;
                 text-shadow: 0 0 15px #F3F315;
+                
                 animation: blinker 1.5s infinite alternate;
                 pointer-events: none;
             }
@@ -54,23 +61,27 @@ def load_css():
                 content: "MENU: PRESIONE AHÍ"; 
                 display: block;
                 position: absolute;
-                top: -110px; 
-                left: 80px;  
+                
+                top: -150px; 
+                left: 60px;  
+                
                 width: 250px;
                 text-align: left;
+                
                 font-family: 'Orbitron', sans-serif;
                 font-size: 1.1rem; 
                 font-weight: 900;
                 letter-spacing: 1px;
                 color: #F3F315;
                 text-shadow: 0 0 10px #F3F315;
+                
                 animation: blinker 1.5s infinite alternate;
                 pointer-events: none;
             }
 
             @keyframes blinker { 
-                0% { opacity: 0.4; text-shadow: 0 0 5px #F3F315; }
-                100% { opacity: 1; text-shadow: 0 0 20px #F3F315, 0 0 10px #FF0055; }
+                0% { opacity: 0.4; text-shadow: 0 0 5px #F3F315; box-shadow: -2px 0 5px rgba(243, 243, 21, 0.2); }
+                100% { opacity: 1; text-shadow: 0 0 20px #F3F315, 0 0 10px #FF0055; box-shadow: -2px 0 15px rgba(243, 243, 21, 0.6); }
             }
 
             .glitch-wrapper {
