@@ -46,7 +46,6 @@ def load_css():
             
             /* FLECHA Y TEXTO */
            .glitch-wrapper::before {
-                /* 1. TEXTO CAMBIADO Y MÁS LARGO (AMPLIO) */
                 content: "↖----------- MENU: PRESIONE AHÍ"; 
                 
                 display: block;
