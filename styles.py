@@ -40,8 +40,9 @@ def load_css():
                 content: "↖";
                 display: block;
                 position: absolute;
-                top: -160px;
-                left: -15px;
+                top: -175px;
+                left: 0px;
+                transform: rotate(20deg);
                 font-size: 7rem;
                 line-height: 1;
                 color: #F3F315;
@@ -52,13 +53,13 @@ def load_css():
             }
 
             .glitch-wrapper::after {
-                content: "MENU:\A PRESIONE AHÍ";
+                content: "PRESIONE EL\A SYMBOL >>";
                 white-space: pre;
                 display: block;
                 position: absolute;
-                top: -100px;
-                left: 75px;
-                width: 250px;
+                top: -95px;
+                left: 5px;
+                width: 300px;
                 text-align: left;
                 font-family: 'Orbitron', sans-serif;
                 font-size: 1.6rem; 
@@ -79,8 +80,8 @@ def load_css():
 
             .glitch-wrapper {
                 transform: scale(0.65);
-                margin-top: 110px;
-                margin-left: -10px;
+                margin-top: 120px;
+                margin-left: -15px;
             }
 
             .glitch { font-size: 2.5rem !important; }
