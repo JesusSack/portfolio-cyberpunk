@@ -45,28 +45,36 @@ def load_css():
         @media only screen and (max-width: 768px) {
             
             /* FLECHA Y TEXTO */
-            .glitch-wrapper::before {
-                content: "↖------- MENU: PRESIONE AQUÍ"; 
+           .glitch-wrapper::before {
+                /* 1. TEXTO CAMBIADO Y MÁS LARGO (AMPLIO) */
+                content: "↖----------- MENU: PRESIONE AHÍ"; 
+                
                 display: block;
                 position: absolute;
                 
-                /* ALTURA: -80px (Pedido exacto: alto pero sin tocar el techo) */
-                top: -80px;       
+                /* 2. POSICIÓN: MÁS ARRIBA Y MÁS A LA IZQUIERDA */
+                /* Antes era -80px, lo subimos a -115px para pegarlo al techo */
+                top: -115px;        
+                left: 10px; /* Lo moví un poco más a la izquierda para apuntar mejor */
                 
-                /* CENTRADO: Lo empujamos más a la derecha para que quede centrado */
-                left: 30px;
-                
-                width: 120%;
+                /* 3. TAMAÑO Y ESPACIADO */
+                width: 300px; /* Aumentado para que entre el texto largo */
                 text-align: left;
                 
                 color: #F3F315;
                 font-family: 'Orbitron', sans-serif;
-                font-size: 1.1rem; /* Un pelín más chico para que entre mejor centrado */
+                
+                /* Fuente más grande */
+                font-size: 1.3rem; 
                 font-weight: 900;
-                letter-spacing: 1px;
+                
+                /* Más espacio entre letras */
+                letter-spacing: 2px; 
+                
                 text-shadow: 0 0 10px #F3F315;
                 
                 animation: blinker 1.5s infinite alternate;
+                pointer-events: none; /* Para que no interfiera con clicks si tapa algo */
             }
 
             @keyframes blinker { 
