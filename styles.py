@@ -37,21 +37,35 @@ def load_css():
         @media only screen and (max-width: 768px) {
             
             .glitch-wrapper::before {
-                content: "↖----------- MENU: PRESIONE AHÍ"; 
+                content: "↖"; 
                 display: block;
                 position: absolute;
-                top: -115px;        
-                left: 10px;
-                width: 300px; 
-                text-align: left;
+                top: -140px; 
+                left: 5px;   
+                font-size: 5rem; 
+                line-height: 1;
                 color: #F3F315;
+                text-shadow: 0 0 15px #F3F315;
+                animation: blinker 1.5s infinite alternate;
+                pointer-events: none;
+            }
+
+            .glitch-wrapper::after {
+                content: "MENU: PRESIONE AHÍ"; 
+                display: block;
+                position: absolute;
+                top: -110px; 
+                left: 80px;  
+                width: 250px;
+                text-align: left;
                 font-family: 'Orbitron', sans-serif;
-                font-size: 1.3rem; 
+                font-size: 1.1rem; 
                 font-weight: 900;
-                letter-spacing: 2px; 
+                letter-spacing: 1px;
+                color: #F3F315;
                 text-shadow: 0 0 10px #F3F315;
                 animation: blinker 1.5s infinite alternate;
-                pointer-events: none; 
+                pointer-events: none;
             }
 
             @keyframes blinker { 
